@@ -1,0 +1,24 @@
+.search-bar {
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 15px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #343434;
+  color: white;
+}
+
+.search-button {
+  padding: 15px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background: transparent;
+  background-color: coral;
+  color: white;
+}

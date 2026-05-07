@@ -1,0 +1,23 @@
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card-img {
+  min-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+p {
+  color: white;
+}
+
+.movie-card {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+}

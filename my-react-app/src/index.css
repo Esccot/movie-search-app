@@ -1,0 +1,17 @@
+body {
+  background: #0a0a0a;
+}
+
+.heading {
+  color: white;
+  text-align: center;
+}
+
+.heading-search-text {
+  color: coral;
+}
+
+.sub-heading {
+  color: #343434;
+  text-align: center;
+}
