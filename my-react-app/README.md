@@ -1,16 +1,72 @@
-# React + Vite
+# 🎬 CineSearch
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern movie search application built with React and the OMDb API.  
+Search for your favourite movies instantly and explore movie posters, titles, and release years in a clean responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- 🔎 Search movies dynamically
+- 🎞 Fetch real movie data using OMDb API
+- 🖼 Display movie posters
+- 📅 Show movie release year
+- ⚛ Built with React Hooks
+- 📱 Responsive grid layout
+- 🔐 Environment variable support for API key security
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js
+- JavaScript (ES6+)
+- CSS3
+- OMDb API
+- Vite
+- Git & GitHub
+
+---
+
+## 📸 Preview
+
+<img width="100%" alt="project-preview" src="YOUR_SCREENSHOT_LINK_HERE" />
+
+---
+
+## ⚡ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Esccot/movie-search-app.git
+
+cd movie-search-app
+
+npm install
+
+npm run dev
+```
+
+🌐 API Used
+OMDb API
+https://www.omdbapi.com/
+
+## 📚 What I Learned
+React component architecture
+Props and state management
+React Hooks (useState)
+Custom hooks
+API fetching with async/await
+Environment variables in Vite
+Responsive CSS Grid layouts
+Git and GitHub workflow
+## 👨‍💻 Author
+Abhay Tomar
+
+## ⭐ Future Improvements
+Add loading spinner
+Add movie details page
+Add debounce search
+Add favorites/watchlist
+Improve animations and UI polish
