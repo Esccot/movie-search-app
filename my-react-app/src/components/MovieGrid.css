@@ -21,3 +21,8 @@ p {
   padding: 10px;
   border-radius: 10px;
 }
+
+.movie-card:hover {
+  transform: scale(1.05);
+  border: 2px solid coral;
+}
