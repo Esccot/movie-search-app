@@ -1,6 +1,6 @@
 # 🎬 CineSearch
 
-A modern movie search application built with React and the OMDb API.  
+A modern movie search application built with React and the TMDB API.  
 Search for your favourite movies instantly and explore movie posters, titles, and release years in a clean responsive UI.
 
 ---
@@ -8,7 +8,7 @@ Search for your favourite movies instantly and explore movie posters, titles, an
 ## 🚀 Features
 
 - 🔎 Search movies dynamically
-- 🎞 Fetch real movie data using OMDb API
+- 🎞 Fetch real movie data using TMDB API
 - 🖼 Display movie posters
 - 📅 Show movie release year
 - ⚛ Built with React Hooks
@@ -22,7 +22,7 @@ Search for your favourite movies instantly and explore movie posters, titles, an
 - React.js
 - JavaScript (ES6+)
 - CSS3
-- OMDb API
+- TMBD API
 - Vite
 - Git & GitHub
 
@@ -30,7 +30,7 @@ Search for your favourite movies instantly and explore movie posters, titles, an
 
 ## 📸 Preview
 
-<img width="100%" alt="project-preview" src="YOUR_SCREENSHOT_LINK_HERE" />
+<img width="100%" alt="project-preview" src="#" />
 
 ---
 
@@ -49,8 +49,8 @@ npm run dev
 ```
 
 🌐 API Used
-OMDb API
-https://www.omdbapi.com/
+TMBD API
+https://developer.themoviedb.org/docs/getting-started
 
 ## 📚 What I Learned
 React component architecture
