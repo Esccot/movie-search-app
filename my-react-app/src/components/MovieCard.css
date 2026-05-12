@@ -1,0 +1,24 @@
+.trend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.trend-card {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.trend-card-img {
+  min-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.trend-card:hover {
+  transform: scale(1.05);
+  border: 2px solid coral;
+}
