@@ -2,10 +2,10 @@ import "./MovieGrid.css";
 
 function MovieGrid({ movies }) {
   console.log("MovieGrid rendering with movies:", movies);
-  if(!movies){
+  
     if (movies.length === 0) {
     return <p>No movies found. Try a different search.</p>;
-  }
+  
   }
   
   return (

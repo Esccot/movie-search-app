@@ -21,4 +21,14 @@
 .trend-card:hover {
   transform: scale(1.05);
   border: 2px solid coral;
+  cursor: pointer;
+}
+
+.trend-card-heading {
+  margin-left: 15px;
+  color: white;
+}
+
+.trend-card-heading span {
+  color: coral;
 }

@@ -3,7 +3,7 @@ import "./movieCard.css";
 function MovieCard({ trendingMovies }) {
   return (
     <div>
-      <h1 className="trend-movie-heading"> Trending Movies</h1>
+      <h1 className="trend-card-heading"> Trending <span>Movies</span></h1>
       <div className="trend-grid">
         {trendingMovies.map((movie) => (
           <div className="trend-card" key={movie.id}>

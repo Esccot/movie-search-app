@@ -25,6 +25,7 @@ p {
 .movie-card:hover {
   transform: scale(1.05);
   border: 2px solid coral;
+  cursor: pointer;
 }
 
 .trend-movie-heading {

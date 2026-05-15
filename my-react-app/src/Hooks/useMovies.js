@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const api_key = import.meta.env.VITE_TMBD_API_KEY;
 console.log("API Key value:", import.meta.env.VITE_TMBD_API_KEY);
 console.log("All env vars:", import.meta.env);
@@ -6,8 +6,9 @@ console.log("All env vars:", import.meta.env);
 function useMovies() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [trendingMovies, setTrendingMovies] = useState([]);
 
-  async function fetchMovies(search) {
+  async function fetchMovies(search, setState) {
     console.log("fetchMovies called with search:", search);
     if (!search.trim()) {
       console.log("Empty search, skipping fetch");
@@ -16,9 +17,7 @@ function useMovies() {
     }
     setLoading(true);
     try {
-      const res = await fetch(
-        `http://localhost:3000/app/movies?query=${search}`,
-      );
+      const res = await fetch(search);
       console.log("Response status:", res.status, res.statusText);
       const data = await res.json();
       console.log("Data received:", data);
@@ -26,7 +25,7 @@ function useMovies() {
         console.error("API error:", data);
         return;
       }
-      setMovies(data.results || []);
+      setState(data.results || []);
       console.log("Movies set, length:", data.results?.length || 0);
     } catch (error) {
       console.error("Fetch error:", error);
@@ -34,7 +33,11 @@ function useMovies() {
       setLoading(false);
     }
   }
-  return { movies, loading, fetchMovies };
+  useEffect(() => {
+    fetchMovies(`http://localhost:3000/app/trending`, setTrendingMovies);
+  }, []);
+
+  return { movies, loading, fetchMovies, setMovies, trendingMovies };
 }
 
 export default useMovies;
