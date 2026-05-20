@@ -1,6 +1,9 @@
 import "./MovieGrid.css";
+import { useNavigate } from "react-router-dom";
+
 
 function MovieGrid({ movies }) {
+  const navigate = useNavigate()
   console.log("MovieGrid rendering with movies:", movies);
   
     if (movies.length === 0) {
@@ -11,7 +14,7 @@ function MovieGrid({ movies }) {
   return (
     <div className="movie-grid">
       {movies.map((movie) => (
-        <div className="movie-card" key={movie.id}>
+        <div className="movie-card" key={movie.id} onClick={()=> navigate(`/movie/${movie.id}`)} >
           {movie.poster_path ? (
             <img
               className="card-img"

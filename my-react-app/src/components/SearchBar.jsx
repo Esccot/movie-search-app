@@ -14,7 +14,7 @@ function SearchBar({ fetchSearch, setMovies }) {
       console.log("Empty search, not fetching");
       return;
     }
-    fetchSearch(`http://localhost:3000/app/movies?query=${movieName}`,setMovies);
+    fetchSearch(`http://localhost:3000/app/movies?query=${movieName}`, setMovies);
     setMovieName("");
   }
 

@@ -25,7 +25,7 @@ function useMovies() {
         console.error("API error:", data);
         return;
       }
-      setState(data.results || []);
+      setState(data.results || data);
       console.log("Movies set, length:", data.results?.length || 0);
     } catch (error) {
       console.error("Fetch error:", error);
