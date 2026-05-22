@@ -7,7 +7,7 @@ function MovieDetails() {
   const { id } = useParams();
   const [details, setDetails] = useState([]);
   const [trailer, setTrailer] = useState([]);
-  const { fetchMovies } = useMovies();
+  const { fetchMovies, loading } = useMovies();
 
   const trailerVideo = trailer?.find((v) => v.type === "Trailer");
 
@@ -17,6 +17,7 @@ function MovieDetails() {
   }, [id]);
   console.log("trailerVideo:", trailerVideo);
   console.log("trailer data:", trailer);
+  if (loading) return <p> loading...</p>;
   return (
     <div className="detail-wrapper">
       <div className="poster-section">
