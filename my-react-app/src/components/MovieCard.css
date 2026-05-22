@@ -9,6 +9,10 @@
   background: #1a1a1a;
   padding: 10px;
   border-radius: 10px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border 0.3s ease;
 }
 
 .trend-card-img {
@@ -21,6 +25,10 @@
 .trend-card:hover {
   transform: scale(1.05);
   border: 2px solid coral;
+  box-shadow:
+    0 0 10px rgba(255, 159, 67, 0.7),
+    0 0 30px rgba(255, 129, 67, 0.4),
+    0 0 60px rgba(255, 129, 67, 0.2);
   cursor: pointer;
 }
 

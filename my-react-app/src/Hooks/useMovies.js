@@ -37,7 +37,7 @@ function useMovies() {
     fetchMovies(`http://localhost:3000/app/trending`, setTrendingMovies);
   }, []);
 
-  return { movies, loading, fetchMovies, setMovies, trendingMovies };
+  return { movies, loading, fetchMovies, setMovies, trendingMovies, loading };
 }
 
 export default useMovies;
