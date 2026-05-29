@@ -1,11 +1,16 @@
 import { useState } from "react";
 import "./SearchBar.css";
 
-function SearchBar({ fetchSearch, setMovies }) {
-  const [movieName, setMovieName] = useState("");
+function SearchBar({
+  fetchSearch,
+  setMovies,
+  movieName,
+  setMovieName,
+  setLastSearch,
+}) {
   function handleChange(e) {
     const value = e.target.value;
-    setMovieName(value); 
+    setMovieName(value);
   }
 
   function handleSearch() {
@@ -14,12 +19,17 @@ function SearchBar({ fetchSearch, setMovies }) {
       console.log("Empty search, not fetching");
       return;
     }
-    fetchSearch(`http://localhost:3000/app/movies?query=${movieName}`, setMovies);
+    
+    setLastSearch(movieName)
+    fetchSearch(
+      `http://localhost:3000/app/movies?query=${movieName}`,
+      setMovies,
+    );
     setMovieName("");
   }
 
   function handleKeyDown(e) {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSearch();
     }
   }

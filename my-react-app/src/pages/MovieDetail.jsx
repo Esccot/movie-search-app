@@ -35,7 +35,7 @@ function MovieDetails() {
         <h2 className="movie-detail-title">{details.title}</h2>
 
         <div className="movie-meta">
-          <p>⭐ Ratings: {details.vote_average}/10</p>
+          <p>⭐ Ratings: {details.vote_average? details.vote_average.toFixed(1): "nill"}/10</p>
           <p>⏱️ Runtime: {details.runtime} mins</p>
         </div>
 

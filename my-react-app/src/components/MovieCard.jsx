@@ -19,6 +19,7 @@ function MovieCard({ trendingMovies }) {
               <div className="trend-no-poster">No Image</div>
             )}
             <p>{movie.title}</p>
+            <p>⭐ Ratings: {movie.vote_average.toFixed(1)}/10</p>
             <p>{movie.release_date}</p>
           </div>
         ))}

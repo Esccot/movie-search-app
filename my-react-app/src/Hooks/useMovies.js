@@ -7,6 +7,8 @@ function useMovies() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [trendingMovies, setTrendingMovies] = useState([]);
+  const [movieName, setMovieName] = useState("");
+  const [lastSearch, setLastSearch] = useState("");
 
   async function fetchMovies(search, setState) {
     console.log("fetchMovies called with search:", search);
@@ -37,7 +39,18 @@ function useMovies() {
     fetchMovies(`http://localhost:3000/app/trending`, setTrendingMovies);
   }, []);
 
-  return { movies, loading, fetchMovies, setMovies, trendingMovies, loading };
+  return {
+    movies,
+    loading,
+    fetchMovies,
+    setMovies,
+    trendingMovies,
+    loading,
+    movieName,
+    setMovieName,
+    lastSearch,
+    setLastSearch,
+  };
 }
 
 export default useMovies;

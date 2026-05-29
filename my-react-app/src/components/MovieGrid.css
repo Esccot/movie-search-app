@@ -40,3 +40,12 @@ p {
 .trend-movie-heading {
   color: white;
 }
+
+.results {
+  color: white;
+  margin-left: 20px;
+}
+
+.results span {
+  color: coral;
+}
