@@ -1,0 +1,99 @@
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.password-button {
+  padding: 10px 15px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 80px;
+  font-weight: bold;
+}
+
+.form-container {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid white;
+  padding: 30px;
+  background-color: rgba(22, 22, 22, 0.95);
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow:
+    0 0 24px rgba(252, 106, 2, 0.6),
+    0 0 30px rgba(246, 156, 37, 0.4);
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-fields input {
+  padding: 14px 16px;
+  border-radius: 10px;
+  outline: none;
+  width: 90%;
+  border: none;
+  background-color: #2a2a2a;
+  color: white;
+}
+
+.input-fields button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: coral;
+}
+
+.submit-button {
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: coral;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.password-wrapper input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 50px 14px 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #2a2a2a;
+  box-sizing: border-box;
+}
+
+.heading {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
