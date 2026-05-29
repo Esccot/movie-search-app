@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import User from "./models/user.js";
+import mongoose from "mongoose";
 
 dotenv.config();
 const api_key = process.env.TMBD_API_KEY;
@@ -9,7 +11,19 @@ console.log(api_key);
 const app = express();
 const port = 3000;
 
-app.use(cors());
+app.use(cors()); // without this browser blocks the requests
+app.use(express.json()); // convert incoming json to js object
+
+async function connectMongoDB() {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("monogoDb connected");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+connectMongoDB();
 
 async function getMovies(url, res) {
   try {
@@ -56,4 +70,20 @@ app.get("/app/movies/trailers/:id", (req, res) => {
 
 app.listen(port, () => {
   console.log(`backend server is running on port ${port}`);
+});
+
+app.post("/app/signup", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.create({ email, password, username });
+    res.status(201).json({
+      message: "user created",
+      user,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "signup failed",
+      error,
+    });
+  }
 });
