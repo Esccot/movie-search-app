@@ -40,19 +40,3 @@
 .trend-card-heading span {
   color: coral;
 }
-
-@media screen and (min-width: 480px) {
-  .trend-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .trend-card img {
-    min-height: 100px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-}
