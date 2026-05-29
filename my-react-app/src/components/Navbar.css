@@ -1,0 +1,24 @@
+.trending-text {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.login-text {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.navbar-main-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
