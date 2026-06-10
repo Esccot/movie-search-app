@@ -97,3 +97,13 @@
   font-weight: bold;
   text-align: center;
 }
+
+.form-paragraph {
+  text-align: center;
+}
+
+.form-paragraph a {
+  color: skyblue;
+  cursor: pointer;
+  text-decoration: underline;
+}
