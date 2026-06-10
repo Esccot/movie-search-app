@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function useForm() {
+function useForm(route) {
   const [form, setForm] = useState({
     username: "",
     email: "",
@@ -25,7 +25,7 @@ function useForm() {
     e.preventDefault();
     try {
       console.log("submitted");
-      const response = await fetch("http://localhost:3000/app/signup", {
+      const response = await fetch(`http://localhost:3000${route}`, {
         method: "post",
         headers: {
           "content-Type": "application/json", // means the data is json
