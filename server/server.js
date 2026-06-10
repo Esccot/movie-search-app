@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import User from "./models/user.js";
 import mongoose from "mongoose";
+import jwt from "jsonwebtoken";
 
 dotenv.config();
 const api_key = process.env.TMBD_API_KEY;
@@ -68,13 +69,17 @@ app.get("/app/movies/trailers/:id", (req, res) => {
   );
 });
 
-app.listen(port, () => {
-  console.log(`backend server is running on port ${port}`);
-});
-
-app.post("/app/signup", async (req, res) => {
+app.post("/app/user/signup", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, username } = req.body;
+    const existingUser = await findOne({ username });
+
+    if (existingUser) {
+      res.status(400).json({
+        message: "user already exists",
+      });
+    }
+
     const user = await User.create({ email, password, username });
     res.status(201).json({
       message: "user created",
@@ -86,4 +91,40 @@ app.post("/app/signup", async (req, res) => {
       error,
     });
   }
+});
+
+app.post("/app/user/signin", async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    const findUser = await User.findOne({ username });
+    // console.log("findUser:", findUser);
+    //console.log("req.body:", req.body);
+    //console.log("db password:", findUser.password);
+    //console.log("entered password:", password);
+
+    if (!findUser) {
+      return res.status(404).json({
+        message: "user not found",
+      });
+    }
+
+    if (findUser.password !== password) {
+      return res.status(401).json({
+        message: "wrong password",
+      });
+    }
+    res.status(200).json({
+      message: "login succesfully",
+      user: findUser,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "couldn't find the username",
+      error,
+    });
+  }
+});
+app.listen(port, () => {
+  console.log(`backend server is running on port ${port}`);
 });
