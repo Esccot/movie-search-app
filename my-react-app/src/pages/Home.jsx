@@ -4,7 +4,6 @@ import "../index.css";
 import MovieGrid from "../components/MovieGrid";
 import MovieCard from "../components/MovieCard";
 import AppIcon from "../assets/search.png";
-import SignIn from "../components/Form";
 import Navbar from "../components/Navbar";
 
 function Home() {
@@ -15,7 +14,7 @@ function Home() {
     setMovies,
     trendingMovies,
     movieName,
-    setMovieName, 
+    setMovieName,
     lastSearch,
     setLastSearch,
   } = useMovies();
