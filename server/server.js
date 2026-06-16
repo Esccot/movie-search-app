@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import User from "./models/user.js";
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
+import verifyToken from "./middleware/verifyToken.js";
+import user from "./models/user.js";
 
 dotenv.config();
 const api_key = process.env.TMBD_API_KEY;
@@ -72,12 +74,13 @@ app.get("/app/movies/trailers/:id", (req, res) => {
 app.post("/app/user/signup", async (req, res) => {
   try {
     const { email, password, username } = req.body;
-    const existingUser = await findOne({ username });
+    const existingUser = await User.findOne({ username });
 
     if (existingUser) {
       res.status(400).json({
         message: "user already exists",
       });
+      return;
     }
 
     const user = await User.create({ email, password, username });
@@ -86,6 +89,7 @@ app.post("/app/user/signup", async (req, res) => {
       user,
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({
       message: "signup failed",
       error,
@@ -114,9 +118,22 @@ app.post("/app/user/signin", async (req, res) => {
         message: "wrong password",
       });
     }
+
+    const token = jwt.sign(
+      {
+        id: findUser.id,
+        username: findUser.username,
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1d",
+      },
+    );
+
     res.status(200).json({
       message: "login succesfully",
       user: findUser,
+      token,
     });
   } catch (error) {
     res.status(500).json({
@@ -125,6 +142,13 @@ app.post("/app/user/signin", async (req, res) => {
     });
   }
 });
+
+app.get("/app/user/profile", verifyToken, (req, res) => {
+  res.status(200).json({
+    user: req.user,
+  });
+});
+
 app.listen(port, () => {
   console.log(`backend server is running on port ${port}`);
 });
